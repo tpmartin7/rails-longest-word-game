@@ -1,0 +1,10 @@
+<h1>Result</h1>
+<% if !@valid %>
+<h2>Sorry, can't make the word <%= params[:guess] %> from <%= params[:letters] %></h2>
+<% elsif @body['found'] %>
+<h3>Congratulations!</h3>
+<% else %>
+<h3>Sorry, <%= params[:guess] %> is not in the dictionary!</h3>
+<p> <%= @body %> </p>
+<% end %>
+<%= link_to "New Game", "/new" %>
